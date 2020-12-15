@@ -1,0 +1,14 @@
+{
+  "name": "cypress-e2e",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "cypress run",
+    "cypress:open": "cypress open"
+  },
+  "devDependencies": {
+    "chance": "^1.1.7",
+    "cypress": "^6.1.0"
+  }
+}
