@@ -25,16 +25,22 @@ describe('Authorization', () => {
   });
 
   it('should trigger sign up error', () => {
-    page.goToSignUpPage().contains('Зарегистрироваться').click().get('.v-alert.error').should('be.visible');
+    page.triggerSignUp().get('.v-alert.error').should('be.visible');
   });
 
   it('should trigger validation error', () => {
-    const [name, patronymics, surname] = chance.name({ middle: true }).split(' ');
+    const [name, patronymics, surname] = chance
+      .name({ middle: true })
+      .split(' ');
     const userData = {
       name,
       surname,
       patronymics,
-      phone: `38${chance.phone({ formatted: false, mobile: true, country: 'us' })}`,
+      phone: `38${chance.phone({
+        formatted: false,
+        mobile: true,
+        country: 'us'
+      })}`,
       password: chance.word({ length: 8 })
     };
 

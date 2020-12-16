@@ -17,7 +17,11 @@ export class Website {
   }
 
   fillSignUpField(order, value) {
-    cy.get(this.buildSelector(order)).type(value)
+    cy.get(this.buildSelector(order)).type(value);
     return this;
+  }
+
+  triggerSignUp() {
+    return this.goToSignUpPage().contains('Зарегистрироваться').click();
   }
 }

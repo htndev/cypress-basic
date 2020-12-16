@@ -10,7 +10,8 @@ export const PATH = {
   REGISTER: '/auth/register',
   DOCTORS: '/doctors',
   ABOUT: '/about',
-  SERVICES: '/services'
+  SERVICES: '/services',
+  DASHBOARD: '/dashboard'
 };
 
 export const SELECTORS = {

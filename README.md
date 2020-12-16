@@ -1,7 +1,22 @@
 # Cypress Basics
 
 ## [Covering target](https://hospital-theta.now.sh/)
+
 [![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
+
+### Installation
+
+> With yarn
+
+```sh
+yarn
+```
+
+> With npm
+
+```sh
+npm i
+```
 
 ### Tests
 
@@ -46,4 +61,20 @@ docker build -t cypress-basic:v1 .
 
 ```sh
 docker run -d cypress-test:v1
+```
+
+### Reports
+
+To generate report use:
+
+> With yarn
+
+```sh
+yarn cypress:reports
+```
+
+> With npm
+
+```sh
+npm run cypress:reports
 ```

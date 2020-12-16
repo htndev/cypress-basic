@@ -3,12 +3,8 @@
 import { PATH, SEARCH } from '../support/constants';
 
 describe('Services', () => {
-  before(() => {
-    cy.insertAdminData();
-  });
-
   beforeEach(() => {
-    cy.visit(PATH.SERVICES);
+    cy.insertAdminData().visit(PATH.SERVICES);
   });
 
   it('should make an appointment with a doctor', () => {
@@ -28,6 +24,10 @@ describe('Services', () => {
   });
 
   it('should filter', () => {
-    cy.get('main div .col-5 input').type(SEARCH.DOCTOR).get('.row').children().should('have.length.at.least', 1);
+    cy.get('main div .col-5 input')
+      .type(SEARCH.DOCTOR)
+      .get('.row')
+      .children()
+      .should('have.length.at.least', 1);
   });
 });
