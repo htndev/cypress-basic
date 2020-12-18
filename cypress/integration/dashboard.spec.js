@@ -6,7 +6,14 @@ const chance = new Chance();
 
 describe('Dashboard', () => {
   beforeEach(() => {
-    cy.insertAdminData().visit(PATH.DASHBOARD);
+    cy.insertAdminData().visit(PATH.DASHBOARD).intercept({
+      method: 'POST',
+      url: '/specialities*'
+    }).as('specs')
+    .intercept({
+      method: 'GET',
+      url: '/specialities?doctorsRequired=amount'
+    }).as('getSpecs');
   });
 
   it('should filter specialties', () => {
@@ -25,7 +32,8 @@ describe('Dashboard', () => {
       .type(fakedWord)
       .get('.v-dialog .v-card__actions button[type="submit"]')
       .click()
-      .get('table tbody tr td.text-start:first-child', { timeout: 500 })
+      .wait('@getSpecs')
+      .get('table tbody tr td.text-start:first-child', { timeout: 1000 })
       .last()
       .should('have.text', fakedWord);
   });
