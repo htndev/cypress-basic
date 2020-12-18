@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
+import '@shelex/cypress-allure-plugin';
 
-import { BASE_URL } from './constants';
 import { Website } from './website';
 
 const page = new Website();

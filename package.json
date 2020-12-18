@@ -5,10 +5,12 @@
   "license": "MIT",
   "scripts": {
     "test": "cypress run",
-    "cypress:open": "cypress open",
-    "cypress:report": "generate-mochawesome-report"
+    "cy:open": "cypress open",
+    "cy:report": "generate-mochawesome-report",
+    "allure:report": "allure generate cypress/results/allure --clean -o cypress/reports/allure"
   },
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^1.8.5",
     "chance": "^1.1.7",
     "cypress": "^6.1.0",
     "cypress-mochawesome-reporter": "^1.3.0"

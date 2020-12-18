@@ -6,5 +6,9 @@
   "viewportHeight": 1600,
   "video": true,
   "screenshot": true,
-  "reporter": "cypress-mochawesome-reporter"
+  "reporter": "cypress-mochawesome-reporter",
+  "env": {
+    "allure": true,
+    "allureResultsPath": "cypress/results/allure"
+  }
 }
